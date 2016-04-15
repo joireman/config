@@ -1,52 +1,40 @@
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
+" Set 'nocompatible' to ward off unexpected things that your 
+" distro might have made, as well as sanely reset options when 
+" re-sourcing .vimrc
 set nocompatible
 
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-filetype indent plugin on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETTINGS - Store all settings in a single file
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/.vim/startup/settings.vim
 
-" Enable syntax highlighting
-syntax on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/.vim/startup/abbrpwj.vim
+source ~/.vim/startup/autocorrect.vim
+source ~/.vim/startup/mappings.vim
+source ~/.vim/startup/autocmd.vim
 
-" Better command-line completion
-set wildmenu
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UltiSnips Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Show partial commands in the last line of the screen
-set showcmd
+" Trigger configuration. Do not use <tab> if you use 
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
-set hlsearch
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
-"------------------------------------------------------------
-" Usability options {{{1
-"
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
 
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
+" Enable powerline plugin for status bar
+"set rtp+=~/git/projects/powerline/powerline/bindings/vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
-
-" When opening a new line and no filetype-specific indenting is enabled, keep
-" the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
-
-" Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
-set nostartofline
-
-" Display the cursor position on the last line of the screen or in the status
-" line of a window
-set ruler
-
-" Show line numbers on the left
-set number  
+" Used 256 colors in terminal
+set t_Co=256
