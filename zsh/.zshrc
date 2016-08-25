@@ -134,9 +134,4 @@ alias realpath='readlink -f'
 #
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-#
-# physiq specific settings
-export PHYSIQ_PPA_ACCESS_KEY=8075F197FBA22BC629EE4311AA218BCAB341C2ABHSEFSHQSC4
-export PHYSIQ_PPA_SECRET_KEY=834BC431CCBF2A314246C2C9EB0136A9AAA337B1
-
+export AIRFLOW_HOME="/home/pwj/airflow"
