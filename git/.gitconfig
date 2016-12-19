@@ -1,0 +1,20 @@
+[user]
+	name = Paul W. Joireman
+	email = paul.joireman@vgbio.com
+[core]
+	editor = vim
+[alias]
+	last = log -1 --date=local
+	llog = log --date=local 
+	changes = diff --name-status -r
+	diffstat = diff --stat -r
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	unstage = reset HEAD --
+	co = checkout
+	br = branch
+[color]
+	ui = auto
+[push]
+	default=simple
+[commit]
+	template = /home/pwj/.gitmessage.txt

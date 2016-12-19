@@ -1,0 +1,6 @@
+Subject line (brief one-line description of commit changes)
+
+- List
+- Of
+- Changes
+

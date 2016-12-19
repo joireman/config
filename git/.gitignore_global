@@ -1,0 +1,24 @@
+# IntelliJ IDEA/PyCharm/...
+.idea/
+*.iml
+
+# Python
+*.pyc
+*.pyo
+*egg*/
+
+# Java
+package-info.java
+
+# Maven
+target/
+
+# Gradle
+gradle.properties
+test.properties
+build/
+.gradle/
+
+# Scratch Files
+archive/
+commit.txt
