@@ -32,9 +32,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Enable powerline plugin for status bar
 "set rtp+=~/git/projects/powerline/powerline/bindings/vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " Used 256 colors in terminal
 set t_Co=256
